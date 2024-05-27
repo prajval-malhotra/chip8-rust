@@ -342,7 +342,6 @@ impl Emu {
                     self.v_reg[idx] = self.ram[i + idx];
                 }
             }
-            
             (_, _, _, _) => unimplemented!("Unimplemented opcode: {}", op),
         }
     }
@@ -358,6 +357,23 @@ impl Emu {
             }
             self.st -= 1;
         }
+    }
+
+    // get pointer to screen buffer for frontend
+    pub fn get_display(&self) -> &[bool] {
+        return &self.screen;
+    }
+
+    // record key strokes
+    pub fn keypress(&mut self, idx: usize, pressed: bool) {
+        self.keys[idx] = pressed;
+    }
+
+    // load game into RAM (starting at START_ADDR: 0x200)
+    pub fn load(&mut self, data: &[u8]) {
+        let start = START_ADDR as usize;
+        let end = (START_ADDR as usize) + data.len();
+        self.ram[start..end].copy_from_slice(data);
     }
 
 }
