@@ -1,1 +1,0 @@
-C:\Users\malho\Desktop\Projects\chip8-rust\desktop\target\debug\desktop.exe: C:\Users\malho\Desktop\Projects\chip8-rust\chip8_core\src\lib.rs C:\Users\malho\Desktop\Projects\chip8-rust\desktop\src\main.rs

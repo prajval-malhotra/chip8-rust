@@ -1,3 +1,2 @@
-/target
-chip8_core/target
-desktop/target
+/target/
+**/target/
